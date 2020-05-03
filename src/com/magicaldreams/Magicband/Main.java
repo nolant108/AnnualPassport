@@ -48,8 +48,14 @@ public class Main extends JavaPlugin{
         skull.setItemMeta(skullMeta);
         
         
+        ItemStack report = new ItemStack(Material.BARRIER);
+        ItemMeta reportMeta = report.getItemMeta();
+        reportMeta.setDisplayName(ChatColor.RED + "Report/Issue");
+        report.setItemMeta(reportMeta);
+        
+        
         MagicbandGUI.setItem(4, skull);
-
+        MagicbandGUI.setItem(9, report);
         
         
         player.openInventory(MagicbandGUI);

@@ -1,15 +1,17 @@
 package com.magicaldreams.Magicband;
 
-import java.util.ArrayList;
+
+
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Sound;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,7 +20,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.SkullMeta;
 
 
 public class OpenBand implements Listener{
@@ -42,7 +43,9 @@ public class OpenBand implements Listener{
 		JoinMB = new ItemStack(Material.FIREWORK_STAR);
 
 		JoinMBMeta = JoinMB.getItemMeta();
-		JoinMBMeta.setDisplayName(ChatColor.BLUE + "MagicBand");
+		JoinMBMeta.setDisplayName(ChatColor.BLUE + player.getName() + "'s MagicBand");
+		
+		JoinMB.setItemMeta(JoinMBMeta);
 		
 		player.getInventory().setItem(0, JoinMB);
 		
@@ -70,8 +73,9 @@ public class OpenBand implements Listener{
 	}
 
 
+	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void onClick(InventoryClickEvent e) {
+	public void onClick(InventoryClickEvent e) throws IOException, URISyntaxException {
 		
         Player player = (Player) e.getWhoClicked();
 		
@@ -83,15 +87,21 @@ public class OpenBand implements Listener{
                 switch (e.getCurrentItem().getType()) {
                 
                 case LEGACY_SKULL_ITEM:
-                    player.closeInventory();
-
+                	
+                	
+                	break;
+                case BARRIER:
+                	player.sendMessage(ChatColor.YELLOW + "Click this link to Report/Issue: https://docs.google.com/forms/d/e/1FAIpQLSf-7fXP9KbaQ6FcpzPaqBA7eeqtBIr1mc0cfxFtQmHMBNp_dg/viewform");
+                	System.out.println("-------------------- " + player.getName() + " has to report something --------------------");
                 	
                     break;
                 default:
                     return;
 	
                 }
-            }
+            }       
+            player.closeInventory();
+
 	 }
 
 		
