@@ -49,6 +49,7 @@ public class OpenBand implements Listener{
 		
 		player.getInventory().setItem(0, JoinMB);
 		
+		
 	}
 	
 	
@@ -115,6 +116,8 @@ public class OpenBand implements Listener{
 	
 	@EventHandler
 	public void ParksonClick(InventoryClickEvent e) {
+		
+		
 		
 Player player = (Player) e.getWhoClicked();
 		

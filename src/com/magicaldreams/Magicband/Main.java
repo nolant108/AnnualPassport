@@ -1,6 +1,11 @@
 package com.magicaldreams.Magicband;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
@@ -24,7 +29,10 @@ import net.minecraft.server.v1_14_R1.Item;
 public class Main extends JavaPlugin{
 	public final Logger logger = this.getLogger();
 	
-
+	private Connection connection;
+	public String RideName, RideDescription, RideLocation, RideStatus;
+	private String host, psswrd;
+	
 	
 	@Override
 	public void onEnable() {
@@ -33,7 +41,26 @@ public class Main extends JavaPlugin{
 		
 		
 		Bukkit.getPluginManager().registerEvents(new OpenBand(this), this);
+		
+		host = "MDDev";
+		psswrd = "Abc123no";
+		
+		try {
+			openConnection();
+			
+			Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "SQL Connected!!");
+			System.out.println("SQL Connected!");
+		}catch(SQLException x){
+			x.printStackTrace();
+			System.out.println("!!SQL NOT-CONNECTED!!   ERROR!!");
+		}
 				
+	}
+	
+	private void openConnection() throws SQLException{
+		if(connection != null && !connection.isClosed()) {
+			connection = DriverManager.getConnection("mongodb+srv://" + this.host + ":" + this.psswrd + "@magicaldreams-jum0e.mongodb.net/test?retryWrites=true&w=majority");
+		}
 	}
 	
 	public void applyMagicBandUI(Player player) {
@@ -69,6 +96,16 @@ public class Main extends JavaPlugin{
 	
 
 	public void applyParksUI(Player player) {
+		
+	//	ResultSet result = DriverManager.executeQuery("SELECT * FROM PlayerData WHERE BALANCE = 0;");		
+	//	List<String> bankruptPlayers = new ArrayList<String>();
+		//while (result.next()) {
+		//    String name = result.getString("PLAYERNAME");
+		//    bankruptPlayers.add(name);
+	//	}
+		List<String> parksLore = new ArrayList<>();
+	//	parksLore.add(ChatColor.GRAY + "Ride is: " + );
+		
 		
 		Inventory ParksGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Parks");
 		
