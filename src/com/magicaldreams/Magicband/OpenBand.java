@@ -113,7 +113,6 @@ public class OpenBand implements Listener{
 		
 	}
 	
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void ParksonClick(InventoryClickEvent e) {
 		
@@ -127,29 +126,43 @@ Player player = (Player) e.getWhoClicked();
                 switch (e.getCurrentItem().getType()) {
                 case GREEN_STAINED_GLASS_PANE:
                     main.applyMagicBandUI((Player) player);
-
+                    
+                	break;
                 case TROPICAL_FISH:
+                	player.performCommand("join swsa");
+                	player.sendMessage(ChatColor.YELLOW + "Attempting to send you to: SWSA");
                 	
                 	break;
                 case DIAMOND_HOE:
+                	player.performCommand("join dlr");
+                	player.sendMessage(ChatColor.YELLOW + "Attempting to send you to: DLR");
                 	
                 	break;
                 case DIAMOND_PICKAXE:
-                	
+                	player.performCommand("join creative");
+                	player.sendMessage(ChatColor.YELLOW + "Attempting to send you to: Creative");
+
                 	break;
                 case POTATO:
-                	
+                	player.performCommand("join tdr");
+                	player.sendMessage(ChatColor.YELLOW + "Attempting to send you to: TDR");
+
                 	break;
                 case ENCHANTED_BOOK:
-                	
+                	player.performCommand("join hub");
+                	player.sendMessage(ChatColor.YELLOW + "Attempting to send you to: HUB");
+
                 	break;
                 case GOLDEN_PICKAXE:
-                	
+                	player.performCommand("join custom");
+                	player.sendMessage(ChatColor.YELLOW + "Attempting to send you to: Custom");
+
                 break;
             default:
                 return;
                 }
             }
+            player.closeInventory();
             
                 }
 		
