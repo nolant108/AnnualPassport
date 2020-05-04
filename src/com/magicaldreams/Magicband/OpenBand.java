@@ -75,7 +75,7 @@ public class OpenBand implements Listener{
 
 	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void onClick(InventoryClickEvent e) throws IOException, URISyntaxException {
+	public void MBonClick(InventoryClickEvent e) throws IOException, URISyntaxException {
 		
         Player player = (Player) e.getWhoClicked();
 		
@@ -87,12 +87,19 @@ public class OpenBand implements Listener{
                 switch (e.getCurrentItem().getType()) {
                 
                 case LEGACY_SKULL_ITEM:
-                	
+                    player.closeInventory();
+
                 	
                 	break;
                 case BARRIER:
                 	player.sendMessage(ChatColor.YELLOW + "Click this link to Report/Issue: https://docs.google.com/forms/d/e/1FAIpQLSf-7fXP9KbaQ6FcpzPaqBA7eeqtBIr1mc0cfxFtQmHMBNp_dg/viewform");
                 	System.out.println("-------------------- " + player.getName() + " has to report something --------------------");
+                	player.sendMessage(ChatColor.RED + "The staff has been notified of your issue!");
+                    player.closeInventory();
+
+                	break;
+                case NETHER_STAR:
+                    main.applyParksUI((Player) player);
                 	
                     break;
                 default:
@@ -100,10 +107,51 @@ public class OpenBand implements Listener{
 	
                 }
             }       
-            player.closeInventory();
 
 	 }
 
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void ParksonClick(InventoryClickEvent e) {
+		
+Player player = (Player) e.getWhoClicked();
+		
+		
+		if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Parks")) {
+
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+                case GREEN_STAINED_GLASS_PANE:
+                    main.applyMagicBandUI((Player) player);
+
+                case TROPICAL_FISH:
+                	
+                	break;
+                case DIAMOND_HOE:
+                	
+                	break;
+                case DIAMOND_PICKAXE:
+                	
+                	break;
+                case POTATO:
+                	
+                	break;
+                case ENCHANTED_BOOK:
+                	
+                	break;
+                case GOLDEN_PICKAXE:
+                	
+                break;
+            default:
+                return;
+                }
+            }
+            
+                }
 		
 	}
 

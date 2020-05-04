@@ -44,7 +44,7 @@ public class Main extends JavaPlugin{
         ItemStack skull = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) 3);
         SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
         skullMeta.setOwner(player.getName());
-        skullMeta.setDisplayName(ChatColor.YELLOW + player.getName() + "'s MagicBand");
+        skullMeta.setDisplayName(ChatColor.YELLOW + player.getName());
         skull.setItemMeta(skullMeta);
         
         
@@ -53,16 +53,79 @@ public class Main extends JavaPlugin{
         reportMeta.setDisplayName(ChatColor.RED + "Report/Issue");
         report.setItemMeta(reportMeta);
         
+        ItemStack parks = new ItemStack(Material.NETHER_STAR);
+        ItemMeta parksMeta = parks.getItemMeta();
+        parksMeta.setDisplayName(ChatColor.YELLOW + "Parks");
+        parks.setItemMeta(parksMeta);
+        
+        
         
         MagicbandGUI.setItem(4, skull);
         MagicbandGUI.setItem(9, report);
-        
+        MagicbandGUI.setItem(13, parks);
         
         player.openInventory(MagicbandGUI);
 	}
 	
 
-	
+	public void applyParksUI(Player player) {
+		
+		Inventory ParksGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Parks");
+		
+        ItemStack back = new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
+        ItemMeta backMeta = back.getItemMeta();
+        backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
+        back.setItemMeta(backMeta);
+        
+        ItemStack parks = new ItemStack(Material.NETHER_STAR);
+        ItemMeta parksMeta = parks.getItemMeta();
+        parksMeta.setDisplayName(ChatColor.YELLOW + "Parks");
+        parks.setItemMeta(parksMeta);
+        
+        ItemStack fish = new ItemStack(Material.TROPICAL_FISH);
+        ItemMeta fishMeta = fish.getItemMeta();
+        fishMeta.setDisplayName(ChatColor.YELLOW + "Join SWSA");
+        fish.setItemMeta(fishMeta);
+        
+        ItemStack key = new ItemStack(Material.DIAMOND_HOE);
+        ItemMeta keyMeta = key.getItemMeta();
+        keyMeta.setDisplayName(ChatColor.AQUA + "Join DLR");
+        key.setItemMeta(keyMeta);
+        
+        ItemStack DAXE = new ItemStack(Material.DIAMOND_PICKAXE);
+        ItemMeta DAXEMeta = DAXE.getItemMeta();
+        DAXEMeta.setDisplayName(ChatColor.AQUA + "Join Creative");
+        DAXE.setItemMeta(DAXEMeta);
+        
+        ItemStack Mickey = new ItemStack(Material.POTATO);
+        ItemMeta MickeyMeta = Mickey.getItemMeta();
+        MickeyMeta.setDisplayName(ChatColor.GOLD + "Join TDL");
+        Mickey.setItemMeta(MickeyMeta);
+        
+        ItemStack BOOK = new ItemStack(Material.ENCHANTED_BOOK);
+        ItemMeta BOOKMeta = BOOK.getItemMeta();
+        BOOKMeta.setDisplayName(ChatColor.BOLD + "Join HUB");
+        BOOK.setItemMeta(BOOKMeta);
+        
+        ItemStack GAXE = new ItemStack(Material.GOLDEN_PICKAXE);
+        ItemMeta GAXEMeta = GAXE.getItemMeta();
+        GAXEMeta.setDisplayName(ChatColor.GOLD + "Join Custom");
+        GAXE.setItemMeta(GAXEMeta);
+		
+		
+        ParksGUI.setItem(4, parks);
+        ParksGUI.setItem(12, fish);
+        ParksGUI.setItem(13, key);
+        ParksGUI.setItem(14, DAXE);
+        ParksGUI.setItem(21, Mickey);
+        ParksGUI.setItem(22, BOOK);
+        ParksGUI.setItem(23, GAXE);
+        ParksGUI.setItem(18, back);
+        
+        player.openInventory(ParksGUI);
+
+		
+	}
 
 	
 	@Override
