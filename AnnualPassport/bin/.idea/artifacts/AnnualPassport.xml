@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AnnualPassport">
+    <output-path>$USER_HOME$/Desktop/MagicalDreams Server/plugins</output-path>
+    <root id="archive" name="AnnualPassport.jar">
+      <element id="module-output" name="AnnualPassport" />
+    </root>
+  </artifact>
+</component>
