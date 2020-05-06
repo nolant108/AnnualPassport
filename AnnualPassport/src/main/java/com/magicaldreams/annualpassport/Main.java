@@ -29,7 +29,7 @@ public final class Main extends JavaPlugin {
         @Override
         public void onEnable() {
 
-            System.out.println("MagicBand Enabled");
+            System.out.println("AnnualPassport Enabled");
 
 
             Bukkit.getPluginManager().registerEvents(new OpenBand(this), this);
@@ -186,7 +186,7 @@ public final class Main extends JavaPlugin {
         @Override
         public void onDisable() {
 
-            System.out.println("MagicBand Disabled");
+            System.out.println("AnnualPassport Disabled");
 
         }
         
