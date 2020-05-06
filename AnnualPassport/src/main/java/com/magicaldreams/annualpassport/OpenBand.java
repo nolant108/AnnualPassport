@@ -43,7 +43,7 @@ public class OpenBand implements Listener {
 
         Player player = e.getPlayer();
 
-        JoinMB = new ItemStack(Material.FIREWORK_STAR);
+        JoinMB = new ItemStack(Material.PAPER);
 
         JoinMBMeta = JoinMB.getItemMeta();
         JoinMBMeta.setDisplayName(ChatColor.BLUE + player.getName() + "'s Annual Passport");
@@ -66,7 +66,7 @@ public class OpenBand implements Listener {
         Player p = e.getPlayer();
         Action item = e.getAction();
 
-        if(p.getItemInHand().getType() == Material.FIREWORK_STAR) {
+        if(p.getItemInHand().getType() == Material.PAPER) {
 
 
             ((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 2.0F, 1.0F);
