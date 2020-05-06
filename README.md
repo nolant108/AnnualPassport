@@ -1,7 +1,7 @@
 # MagicBand-Menu
 MagicBand Menu for the Minecraft server: Magical Dreams
 
-name: MagicalDreams-AnnualPassportMenu<br/><br/>
+name: MagicalDreams-AnnualPassportMenu<br/>
 version: 0.10.2<br/>
 main: com.magicaldreams.annualpassport.Main
 api-version: 1.14<br/>
