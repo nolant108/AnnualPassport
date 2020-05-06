@@ -1,24 +1,22 @@
 # MagicBand-Menu
 MagicBand Menu for the Minecraft server: Magical Dreams
 
-name: MWMMagicBand<br/>
-main: com.magicaldreams.Magicband.Main<br/>
-version: 0.2.0<br/>
-api-version: 1.14v
-database: false<br/>
-prefix: MWMMagicBand<br/>
+name: MagicalDreams-AnnualPassportMenu<br/>
+version: 0.10.2<br/>
+main: com.magicaldreams.annualpassport.Main
+api-version: 1.14<br/>
+description: The AnnualPassport plugin for getting around and for use with MagicalDreams<br/>
 author: Nolant108<br/>
 authors: [MagicalDreams]<br/>
-website: magicaldreams.us , github.com/nolant108<br/>
-description: (TESTING VERSION) The Magicband plugin for magicaldreams<br/>
+website: github.com/nolant108, magicaldreams.usv
 commands:<br/>
 <br/>
 
-MIT License
+MIT License<br/>
 
-Copyright (c) 2020 Nolan Trapp
+Copyright (c) 2020 Nolan Trapp<br/>
 
-To recicve a licence, fill out this form:  https://forms.gle/NrGjkt4T4CrKnMgJ9
+To recicve a licence, fill out this form:  https://forms.gle/NrGjkt4T4CrKnMgJ9<br/>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
