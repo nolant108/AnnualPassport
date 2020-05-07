@@ -8,7 +8,7 @@ api-version: 1.14<br/>
 description: The AnnualPassport plugin for getting around and for use with MagicalDreams<br/>
 author: Nolant108<br/>
 authors: [MagicalDreams]<br/>
-website: github.com/nolant108, magicaldreams.usv
+website: github.com/nolant108, magicaldreams.us<br/>
 commands:<br/>
 <br/>
 
