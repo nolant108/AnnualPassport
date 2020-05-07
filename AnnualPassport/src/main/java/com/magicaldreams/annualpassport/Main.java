@@ -97,7 +97,7 @@ public final class Main extends JavaPlugin {
 
             ItemStack Shows = new ItemStack((Material.CLOCK));
             ItemMeta ShowsMeta = Shows.getItemMeta();
-            ShowsMeta.setDisplayName(ChatColor.YELLOW + "Shops");
+            ShowsMeta.setDisplayName(ChatColor.YELLOW + "Show Times");
             Shows.setItemMeta(ShowsMeta);
 
             MagicbandGUI.setItem(4, skull);
@@ -175,11 +175,66 @@ public final class Main extends JavaPlugin {
             ParksGUI.setItem(21, Mickey);
             ParksGUI.setItem(22, BOOK);
             ParksGUI.setItem(23, GAXE);
-            ParksGUI.setItem(18, back);
+            ParksGUI.setItem(0, back);
 
             player.openInventory(ParksGUI);
 
 
+        }
+        
+        public void applyShowTimesUI(Player player) {
+        	
+            List<String> STM = new ArrayList<>();
+            STM.add(ChatColor.GREEN + "9:00am-11:00am");
+
+            List<String> STA = new ArrayList<>();
+            STA.add(ChatColor.GREEN + "12:00pm-5:00pm");
+
+            List<String> STE = new ArrayList<>();
+            STE.add(ChatColor.GREEN + "6:00pm-11:00pm");
+
+
+        	
+            Inventory ShowTimesGUI = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Show Times");
+            
+            ItemStack back = new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
+            ItemMeta backMeta = back.getItemMeta();
+            backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
+            back.setItemMeta(backMeta);
+            
+            ItemStack Shows = new ItemStack((Material.CLOCK));
+            ItemMeta ShowsMeta = Shows.getItemMeta();
+            ShowsMeta.setDisplayName(ChatColor.YELLOW + "Show Times");
+            Shows.setItemMeta(ShowsMeta);
+            
+            ItemStack ShowsM = new ItemStack((Material.CLOCK));
+            ItemMeta ShowsMMeta = ShowsM.getItemMeta();
+            ShowsMMeta.setDisplayName(ChatColor.GREEN + "9:00am-11:00am");
+            ShowsM.setItemMeta(ShowsMMeta);
+            ShowsMMeta.setLore(STM);
+            
+            ItemStack ShowsA = new ItemStack((Material.CLOCK));
+            ItemMeta ShowsAMeta = ShowsA.getItemMeta();
+            ShowsAMeta.setDisplayName(ChatColor.GREEN + "12:00pm-5:00pm");
+            ShowsA.setItemMeta(ShowsAMeta);
+            ShowsAMeta.setLore(STA);
+            
+            ItemStack ShowsE = new ItemStack((Material.CLOCK));
+            ItemMeta ShowsEMeta = ShowsE.getItemMeta();
+            ShowsEMeta.setDisplayName(ChatColor.GREEN + "6:00pm-11:00pm");
+            ShowsE.setItemMeta(ShowsEMeta);
+            ShowsEMeta.setLore(STE);
+            
+            ShowTimesGUI.setItem(0, back);
+            ShowTimesGUI.setItem(4, Shows);
+            ShowTimesGUI.setItem(9, ShowsM);
+            ShowTimesGUI.setItem(27, ShowsA);
+            ShowTimesGUI.setItem(45, ShowsE);
+
+            
+            
+            player.openInventory(ShowTimesGUI);
+        	
         }
 
 

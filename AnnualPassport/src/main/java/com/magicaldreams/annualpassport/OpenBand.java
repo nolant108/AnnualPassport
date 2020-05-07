@@ -108,6 +108,10 @@ public class OpenBand implements Listener {
 
                         break;
                     case MINECART:
+                    	
+                    	break;
+                    case CLOCK:
+                    	 main.applyShowTimesUI((Player) player);
 
                         break;
                     default:
@@ -119,6 +123,30 @@ public class OpenBand implements Listener {
         }
 
 
+    }
+    
+    @EventHandler
+    public void STonClick(InventoryClickEvent e) {
+    	
+    	Player player = (Player) e.getWhoClicked();
+    	
+    	if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Show Times")) {
+
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+                
+                case GREEN_STAINED_GLASS_PANE: 
+                    Main.applyMagicBandUI((Player) player);
+                
+                
+                break;
+            default:
+                return;
+                }
+            	}
+                }
+    	
     }
 
     @EventHandler
@@ -135,7 +163,7 @@ public class OpenBand implements Listener {
                 e.setCancelled(true);
                 switch (e.getCurrentItem().getType()) {
                     case GREEN_STAINED_GLASS_PANE:
-                        main.applyMagicBandUI((Player) player);
+                        Main.applyMagicBandUI((Player) player);
 
                         break;
                     case TROPICAL_FISH:
