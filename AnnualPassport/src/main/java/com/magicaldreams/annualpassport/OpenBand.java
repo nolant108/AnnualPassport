@@ -67,7 +67,9 @@ public class OpenBand implements Listener {
         Action item = e.getAction();
 
         if(p.getItemInHand().getType() == Material.PAPER) {
-
+        	if(action.equals(Action.PHYSICAL)) {
+	        	return;
+	        }
 
             ((Player) player).playSound(((OfflinePlayer) player).getPlayer().getLocation(), Sound.BLOCK_NOTE_BLOCK_CHIME, 2.0F, 1.0F);
 
