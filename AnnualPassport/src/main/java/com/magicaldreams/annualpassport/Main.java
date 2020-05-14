@@ -59,10 +59,6 @@ public final class Main extends JavaPlugin {
             //Beginning
             Inventory MagicbandGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Annual Passport");
 
-            ItemStack report = new ItemStack(Material.BARRIER);
-            ItemMeta reportMeta = report.getItemMeta();
-            reportMeta.setDisplayName(ChatColor.RED + "Report/Issue");
-            report.setItemMeta(reportMeta);
 
             ItemStack skull = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) 3);
             SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
@@ -80,7 +76,7 @@ public final class Main extends JavaPlugin {
             attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
             attractions.setItemMeta(attractionsmeta);
 
-            ItemStack Entertianment = new ItemStack((Material.LEGACY_FIREWORK));
+            ItemStack Entertianment = new ItemStack((Material.FIREWORK_ROCKET));
             ItemMeta EntertianmentMeta = Entertianment.getItemMeta();
             EntertianmentMeta.setDisplayName(ChatColor.YELLOW + "Entertainment");
             Entertianment.setItemMeta(EntertianmentMeta);
@@ -94,20 +90,48 @@ public final class Main extends JavaPlugin {
             ItemMeta ShopsMeta = Shops.getItemMeta();
             ShopsMeta.setDisplayName(ChatColor.YELLOW + "Shops");
             Shops.setItemMeta(ShopsMeta);
-
-            ItemStack Shows = new ItemStack((Material.CLOCK));
-            ItemMeta ShowsMeta = Shows.getItemMeta();
-            ShowsMeta.setDisplayName(ChatColor.YELLOW + "Show Times");
-            Shows.setItemMeta(ShowsMeta);
-
+            
+            
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
+            
+            
+            MagicbandGUI.setItem(0, BSG);
+            MagicbandGUI.setItem(1, BSG);
+            MagicbandGUI.setItem(2, BSG);
+            MagicbandGUI.setItem(3, BSG);
             MagicbandGUI.setItem(4, skull);
-            MagicbandGUI.setItem(9, report);
+            MagicbandGUI.setItem(5, BSG);
+            MagicbandGUI.setItem(6, BSG);
+            MagicbandGUI.setItem(7, BSG);
+            MagicbandGUI.setItem(8, BSG);
+            MagicbandGUI.setItem(9, GSG);
+            MagicbandGUI.setItem(10, GSG);
             MagicbandGUI.setItem(11, Dining);
             MagicbandGUI.setItem(12, Entertianment);
             MagicbandGUI.setItem(13, parks);
             MagicbandGUI.setItem(14, attractions);
             MagicbandGUI.setItem(15, Shops);
-            MagicbandGUI.setItem(17, Shows);
+            MagicbandGUI.setItem(16, GSG);
+            MagicbandGUI.setItem(17, GSG);
+            MagicbandGUI.setItem(18, BSG);
+            MagicbandGUI.setItem(19, BSG);
+            MagicbandGUI.setItem(20, BSG);
+            MagicbandGUI.setItem(21, BSG);
+      //UNDOWN(HIDDEN MICKIE)      
+            MagicbandGUI.setItem(23, BSG);
+            MagicbandGUI.setItem(24, BSG);
+            MagicbandGUI.setItem(25, BSG);
+            MagicbandGUI.setItem(26, BSG);
+
+
 
             player.openInventory(MagicbandGUI);
         }
@@ -127,7 +151,7 @@ public final class Main extends JavaPlugin {
 
             Inventory ParksGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Parks");
 
-            ItemStack back = new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
+            ItemStack back = new ItemStack(Material.PAPER);
             ItemMeta backMeta = back.getItemMeta();
             backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
             back.setItemMeta(backMeta);
@@ -154,7 +178,7 @@ public final class Main extends JavaPlugin {
 
             ItemStack Mickey = new ItemStack(Material.POTATO);
             ItemMeta MickeyMeta = Mickey.getItemMeta();
-            MickeyMeta.setDisplayName(ChatColor.GOLD + "Join TDL");
+            MickeyMeta.setDisplayName(ChatColor.GOLD + "Join TDR");
             Mickey.setItemMeta(MickeyMeta);
 
             ItemStack BOOK = new ItemStack(Material.ENCHANTED_BOOK);
@@ -166,16 +190,46 @@ public final class Main extends JavaPlugin {
             ItemMeta GAXEMeta = GAXE.getItemMeta();
             GAXEMeta.setDisplayName(ChatColor.GOLD + "Join Custom");
             GAXE.setItemMeta(GAXEMeta);
+            
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
 
 
-            ParksGUI.setItem(4, parks);
-            ParksGUI.setItem(12, fish);
-            ParksGUI.setItem(13, key);
-            ParksGUI.setItem(14, DAXE);
-            ParksGUI.setItem(21, Mickey);
-            ParksGUI.setItem(22, BOOK);
-            ParksGUI.setItem(23, GAXE);
-            ParksGUI.setItem(0, back);
+            ParksGUI.setItem( 0,BSG);
+            ParksGUI.setItem( 1,BSG);
+            ParksGUI.setItem( 2,BSG);
+            ParksGUI.setItem(3 ,BSG);
+            ParksGUI.setItem(4 ,key);
+            ParksGUI.setItem(5 ,BSG);
+            ParksGUI.setItem( 6,BSG);
+            ParksGUI.setItem( 7,BSG);
+            ParksGUI.setItem( 8,BSG);
+            ParksGUI.setItem(9 ,parks);
+            ParksGUI.setItem(10 ,GSG);
+            ParksGUI.setItem( 11,GSG);
+            ParksGUI.setItem(12 , GAXE);
+            ParksGUI.setItem( 13, BOOK);
+            ParksGUI.setItem( 14, DAXE);
+            ParksGUI.setItem( 15,GSG);
+            ParksGUI.setItem( 16,GSG);
+            ParksGUI.setItem( 17, back);
+            ParksGUI.setItem( 18,BSG);
+            ParksGUI.setItem( 19,BSG);
+            ParksGUI.setItem( 20,BSG);
+            ParksGUI.setItem( 21,BSG);
+            ParksGUI.setItem( 22,Mickey);
+            ParksGUI.setItem( 23,BSG);
+            ParksGUI.setItem( 24,BSG);
+            ParksGUI.setItem( 25,BSG);
+            ParksGUI.setItem( 26,BSG);
+
 
             player.openInventory(ParksGUI);
 
@@ -197,15 +251,15 @@ public final class Main extends JavaPlugin {
         	
             Inventory ShowTimesGUI = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Show Times");
             
-            ItemStack back = new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
+            ItemStack back = new ItemStack(Material.PAPER);
             ItemMeta backMeta = back.getItemMeta();
             backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
             back.setItemMeta(backMeta);
             
-            ItemStack Shows = new ItemStack((Material.CLOCK));
-            ItemMeta ShowsMeta = Shows.getItemMeta();
-            ShowsMeta.setDisplayName(ChatColor.YELLOW + "Show Times");
-            Shows.setItemMeta(ShowsMeta);
+            ItemStack Entertianment = new ItemStack((Material.FIREWORK_ROCKET));
+            ItemMeta EntertianmentMeta = Entertianment.getItemMeta();
+            EntertianmentMeta.setDisplayName(ChatColor.YELLOW + "Entertainment");
+            Entertianment.setItemMeta(EntertianmentMeta);
             
             ItemStack ShowsM = new ItemStack((Material.CLOCK));
             ItemMeta ShowsMMeta = ShowsM.getItemMeta();
@@ -225,12 +279,103 @@ public final class Main extends JavaPlugin {
             ShowsE.setItemMeta(ShowsEMeta);
             ShowsEMeta.setLore(STE);
             
-            ShowTimesGUI.setItem(0, back);
-            ShowTimesGUI.setItem(4, Shows);
-            ShowTimesGUI.setItem(9, ShowsM);
-            ShowTimesGUI.setItem(27, ShowsA);
-            ShowTimesGUI.setItem(45, ShowsE);
+            ItemStack ShowM1 = new ItemStack((Material.LIGHT_BLUE_DYE));
+            ItemMeta ShowM1Meta = ShowM1.getItemMeta();
+            ShowM1Meta.setDisplayName(ChatColor.YELLOW + "Show M 1");
+            ShowM1.setItemMeta(ShowM1Meta);
+            
+            ItemStack ShowM2 = new ItemStack((Material.LIGHT_BLUE_DYE));
+            ItemMeta ShowM2Meta = ShowM2.getItemMeta();
+            ShowM2Meta.setDisplayName(ChatColor.YELLOW + "Show M 2");
+            ShowM2.setItemMeta(ShowM2Meta);
 
+            ItemStack ShowM3 = new ItemStack((Material.LIGHT_BLUE_DYE));
+            ItemMeta ShowM3Meta = ShowM1.getItemMeta();
+            ShowM3Meta.setDisplayName(ChatColor.YELLOW + "Show M 3");
+            ShowM3.setItemMeta(ShowM3Meta);
+            
+            ItemStack ShowM4 = new ItemStack((Material.LIGHT_BLUE_DYE));
+            ItemMeta ShowM4Meta = ShowM4.getItemMeta();
+            ShowM4Meta.setDisplayName(ChatColor.YELLOW + "Show M 4");
+            ShowM4.setItemMeta(ShowM4Meta);
+            
+
+            
+            ItemStack ShowA1 = new ItemStack((Material.MAGENTA_DYE));
+            ItemMeta ShowA1Meta = ShowA1.getItemMeta();
+            ShowA1Meta.setDisplayName(ChatColor.YELLOW + "Show A 1");
+            ShowA1.setItemMeta(ShowA1Meta);
+            
+            ItemStack ShowE1 = new ItemStack((Material.ORANGE_DYE));
+            ItemMeta ShowE1Meta = ShowE1.getItemMeta();
+            ShowE1Meta.setDisplayName(ChatColor.YELLOW + "Show E 1");
+            ShowE1.setItemMeta(ShowE1Meta);
+
+            
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
+            
+            ShowTimesGUI.setItem(0, BSG);
+            ShowTimesGUI.setItem(1, BSG);
+            ShowTimesGUI.setItem(2, BSG);
+            ShowTimesGUI.setItem(3, BSG);
+            ShowTimesGUI.setItem(4, Entertianment);
+            ShowTimesGUI.setItem(5, BSG);
+            ShowTimesGUI.setItem(6, BSG);
+            ShowTimesGUI.setItem(7, BSG);
+            ShowTimesGUI.setItem(8, back);
+            ShowTimesGUI.setItem(9, ShowsM);
+            ShowTimesGUI.setItem(10, ShowM1);
+           // ShowTimesGUI.setItem(11, );
+            ShowTimesGUI.setItem(12, ShowM2);
+          //  ShowTimesGUI.setItem(13, );
+            ShowTimesGUI.setItem(14, ShowM3);
+          //  ShowTimesGUI.setItem(15, );
+            ShowTimesGUI.setItem(16, ShowM4);
+          //  ShowTimesGUI.setItem(17, );
+            ShowTimesGUI.setItem(18, GSG);
+            ShowTimesGUI.setItem(19, GSG);
+            ShowTimesGUI.setItem(20, GSG);
+            ShowTimesGUI.setItem(21, GSG);
+            ShowTimesGUI.setItem(22, GSG);
+            ShowTimesGUI.setItem(23, GSG);
+            ShowTimesGUI.setItem(24, GSG);
+            ShowTimesGUI.setItem(25, GSG);
+            ShowTimesGUI.setItem(26, GSG);
+            ShowTimesGUI.setItem(27, ShowsA);
+            ShowTimesGUI.setItem(28, ShowA1);
+          //  ShowTimesGUI.setItem(29, );
+            ShowTimesGUI.setItem(30, ShowA1);
+           // ShowTimesGUI.setItem(31, );
+            ShowTimesGUI.setItem(32, ShowA1);
+         //   ShowTimesGUI.setItem(33, );
+            ShowTimesGUI.setItem(34, ShowA1);
+         //   ShowTimesGUI.setItem(35, );
+            ShowTimesGUI.setItem(36, BSG);
+            ShowTimesGUI.setItem(37, BSG);
+            ShowTimesGUI.setItem(38, BSG);
+            ShowTimesGUI.setItem(39, BSG);
+            ShowTimesGUI.setItem(40, BSG);
+            ShowTimesGUI.setItem(41, BSG);
+            ShowTimesGUI.setItem(42, BSG);
+            ShowTimesGUI.setItem(43, BSG);
+            ShowTimesGUI.setItem(44, BSG);
+            ShowTimesGUI.setItem(45, ShowsE);
+            ShowTimesGUI.setItem(46, ShowE1);
+         //   ShowTimesGUI.setItem(47, );
+            ShowTimesGUI.setItem(48, ShowE1);
+         //   ShowTimesGUI.setItem(49, );
+            ShowTimesGUI.setItem(50, ShowE1);
+          //  ShowTimesGUI.setItem(51, );
+            ShowTimesGUI.setItem(52, ShowE1);
+         //   ShowTimesGUI.setItem(53, );
             
             
             player.openInventory(ShowTimesGUI);

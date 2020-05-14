@@ -112,7 +112,7 @@ public class OpenBand implements Listener {
                     case MINECART:
                     	
                     	break;
-                    case CLOCK:
+                    case FIREWORK_ROCKET:
                     	 main.applyShowTimesUI((Player) player);
 
                         break;
@@ -138,7 +138,7 @@ public class OpenBand implements Listener {
                 e.setCancelled(true);
                 switch (e.getCurrentItem().getType()) {
                 
-                case GREEN_STAINED_GLASS_PANE: 
+                case PAPER: 
                     Main.applyMagicBandUI((Player) player);
                 
                 
@@ -164,7 +164,7 @@ public class OpenBand implements Listener {
             if(e.getCurrentItem() != null) {
                 e.setCancelled(true);
                 switch (e.getCurrentItem().getType()) {
-                    case GREEN_STAINED_GLASS_PANE:
+                    case PAPER:
                         Main.applyMagicBandUI((Player) player);
 
                         break;
