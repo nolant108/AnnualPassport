@@ -279,6 +279,8 @@ public final class Main extends JavaPlugin {
             ShowsE.setItemMeta(ShowsEMeta);
             ShowsEMeta.setLore(STE);
             
+            
+            
             ItemStack ShowM1 = new ItemStack((Material.LIGHT_BLUE_DYE));
             ItemMeta ShowM1Meta = ShowM1.getItemMeta();
             ShowM1Meta.setDisplayName(ChatColor.YELLOW + "Show M 1");
@@ -301,16 +303,53 @@ public final class Main extends JavaPlugin {
             
 
             
+            
             ItemStack ShowA1 = new ItemStack((Material.MAGENTA_DYE));
             ItemMeta ShowA1Meta = ShowA1.getItemMeta();
             ShowA1Meta.setDisplayName(ChatColor.YELLOW + "Show A 1");
             ShowA1.setItemMeta(ShowA1Meta);
             
+            ItemStack ShowA2 = new ItemStack((Material.MAGENTA_DYE));
+            ItemMeta ShowA2Meta = ShowA2.getItemMeta();
+            ShowA2Meta.setDisplayName(ChatColor.YELLOW + "Show A 2");
+            ShowA2.setItemMeta(ShowA2Meta);
+            
+            ItemStack ShowA3 = new ItemStack((Material.MAGENTA_DYE));
+            ItemMeta ShowA3Meta = ShowA3.getItemMeta();
+            ShowA3Meta.setDisplayName(ChatColor.YELLOW + "Show A 3");
+            ShowA3.setItemMeta(ShowA3Meta);
+            
+            ItemStack ShowA4 = new ItemStack((Material.MAGENTA_DYE));
+            ItemMeta ShowA4Meta = ShowA4.getItemMeta();
+            ShowA4Meta.setDisplayName(ChatColor.YELLOW + "Show A 4");
+            ShowA4.setItemMeta(ShowA4Meta);
+            
+            
+            
+            
+            
             ItemStack ShowE1 = new ItemStack((Material.ORANGE_DYE));
             ItemMeta ShowE1Meta = ShowE1.getItemMeta();
             ShowE1Meta.setDisplayName(ChatColor.YELLOW + "Show E 1");
             ShowE1.setItemMeta(ShowE1Meta);
+            
+            ItemStack ShowE2 = new ItemStack((Material.ORANGE_DYE));
+            ItemMeta ShowE2Meta = ShowE2.getItemMeta();
+            ShowE2Meta.setDisplayName(ChatColor.YELLOW + "Show E 2");
+            ShowE2.setItemMeta(ShowE2Meta);
+            
+            ItemStack ShowE3 = new ItemStack((Material.ORANGE_DYE));
+            ItemMeta ShowE3Meta = ShowE3.getItemMeta();
+            ShowE3Meta.setDisplayName(ChatColor.YELLOW + "Show E 3");
+            ShowE3.setItemMeta(ShowE3Meta);
+            
+            ItemStack ShowE4 = new ItemStack((Material.ORANGE_DYE));
+            ItemMeta ShowE4Meta = ShowE4.getItemMeta();
+            ShowE4Meta.setDisplayName(ChatColor.YELLOW + "Show E 4");
+            ShowE4.setItemMeta(ShowE4Meta);
 
+            
+            
             
             ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
             ItemMeta BSGMeta = BSG.getItemMeta();
@@ -352,11 +391,11 @@ public final class Main extends JavaPlugin {
             ShowTimesGUI.setItem(27, ShowsA);
             ShowTimesGUI.setItem(28, ShowA1);
           //  ShowTimesGUI.setItem(29, );
-            ShowTimesGUI.setItem(30, ShowA1);
+            ShowTimesGUI.setItem(30, ShowA2);
            // ShowTimesGUI.setItem(31, );
-            ShowTimesGUI.setItem(32, ShowA1);
+            ShowTimesGUI.setItem(32, ShowA3);
          //   ShowTimesGUI.setItem(33, );
-            ShowTimesGUI.setItem(34, ShowA1);
+            ShowTimesGUI.setItem(34, ShowA4);
          //   ShowTimesGUI.setItem(35, );
             ShowTimesGUI.setItem(36, BSG);
             ShowTimesGUI.setItem(37, BSG);
@@ -370,11 +409,11 @@ public final class Main extends JavaPlugin {
             ShowTimesGUI.setItem(45, ShowsE);
             ShowTimesGUI.setItem(46, ShowE1);
          //   ShowTimesGUI.setItem(47, );
-            ShowTimesGUI.setItem(48, ShowE1);
+            ShowTimesGUI.setItem(48, ShowE2);
          //   ShowTimesGUI.setItem(49, );
-            ShowTimesGUI.setItem(50, ShowE1);
+            ShowTimesGUI.setItem(50, ShowE3);
           //  ShowTimesGUI.setItem(51, );
-            ShowTimesGUI.setItem(52, ShowE1);
+            ShowTimesGUI.setItem(52, ShowE4);
          //   ShowTimesGUI.setItem(53, );
             
             
