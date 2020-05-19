@@ -33,6 +33,8 @@ public final class Main extends JavaPlugin {
 
 
             Bukkit.getPluginManager().registerEvents(new OpenBand(this), this);
+            Bukkit.getPluginManager().registerEvents(new BandWorldDetector(this), this);
+
 
             host = "MDDev";
             psswrd = "Abc123no";
@@ -55,16 +57,21 @@ public final class Main extends JavaPlugin {
             }
         }
 
-        public static void applyMagicBandUI(Player player) {
+        @SuppressWarnings("deprecation")
+		public static void applyMagicBandUI(Player player) {
             //Beginning
             Inventory MagicbandGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Annual Passport");
+            
+            List<String> playerLore = new ArrayList<>();
+            playerLore.add(ChatColor.RED + "Audio, Time, Report");
 
 
-            ItemStack skull = new ItemStack(Material.LEGACY_SKULL_ITEM, 1, (short) 3);
+            ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
             SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
             skullMeta.setOwner(player.getName());
-            skullMeta.setDisplayName(ChatColor.YELLOW + player.getName());
+            skullMeta.setDisplayName(ChatColor.YELLOW + player.getName() + "'s Settings");
             skull.setItemMeta(skullMeta);
+            skullMeta.setLore(playerLore);
 
             ItemStack parks = new ItemStack(Material.NETHER_STAR);
             ItemMeta parksMeta = parks.getItemMeta();
@@ -419,6 +426,71 @@ public final class Main extends JavaPlugin {
             
             player.openInventory(ShowTimesGUI);
         	
+            
+            
+        }
+        
+        
+        public void applyPlayerUI(Player player) {
+        	
+            Inventory PlayerGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Player Settings");
+
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
+            
+            ItemStack audioS = new ItemStack(Material.JUKEBOX);
+            ItemMeta audioSMeta = audioS.getItemMeta();
+            audioSMeta.setDisplayName(ChatColor.GOLD + "Connect To Audio Server");
+            audioS.setItemMeta(audioSMeta);
+            
+            ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
+            SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+            skullMeta.setOwner(player.getName());
+            skullMeta.setDisplayName(ChatColor.YELLOW + player.getName() + "'s Settings");
+            skull.setItemMeta(skullMeta);
+            
+            ItemStack back = new ItemStack(Material.PAPER);
+            ItemMeta backMeta = back.getItemMeta();
+            backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
+            back.setItemMeta(backMeta);
+            
+            PlayerGUI.setItem(0, BSG);
+            PlayerGUI.setItem(1, BSG);
+            PlayerGUI.setItem(2, BSG);
+            PlayerGUI.setItem(3, BSG);
+            PlayerGUI.setItem(4, skull);
+            PlayerGUI.setItem(5, BSG);
+            PlayerGUI.setItem(6, BSG);
+            PlayerGUI.setItem(7, BSG);
+            PlayerGUI.setItem(8, BSG);
+            PlayerGUI.setItem(9, GSG);
+            PlayerGUI.setItem(10, GSG);
+            //
+            //
+            //
+            //
+            //
+            PlayerGUI.setItem(16, GSG);
+            PlayerGUI.setItem(17, back);
+            PlayerGUI.setItem(18, BSG);
+            PlayerGUI.setItem(19, BSG);
+            PlayerGUI.setItem(20, BSG);
+            PlayerGUI.setItem(21, BSG);
+            PlayerGUI.setItem(22, audioS);
+            PlayerGUI.setItem(23, BSG);
+            PlayerGUI.setItem(24, BSG);
+            PlayerGUI.setItem(25, BSG);
+            PlayerGUI.setItem(26, BSG);
+
+            player.openInventory(PlayerGUI);
+            
         }
 
 

@@ -92,9 +92,10 @@ public class OpenBand implements Listener {
                 e.setCancelled(true);
                 switch (e.getCurrentItem().getType()) {
 
-                    case LEGACY_SKULL_ITEM:
-                        player.closeInventory();
+                    case PLAYER_HEAD:
+                   main.applyPlayerUI((Player) player);
 
+                        
 
                         break;
                     case BARRIER:
@@ -115,6 +116,7 @@ public class OpenBand implements Listener {
                     case FIREWORK_ROCKET:
                     	 main.applyShowTimesUI((Player) player);
 
+
                         break;
                     default:
                         return;
@@ -126,6 +128,33 @@ public class OpenBand implements Listener {
 
 
     }
+    
+    @SuppressWarnings("deprecation")
+    @EventHandler
+    public void PlayerClick(InventoryClickEvent e) throws IOException, URISyntaxException {
+
+        Player player = (Player) e.getWhoClicked();
+
+
+        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Player Settings")) {
+
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+                
+                case PAPER:
+                    Main.applyMagicBandUI((Player) player);
+                    
+                    break;
+                case JUKEBOX:
+                    player.performCommand("audio");
+                break;
+            default:
+                return;
+                }
+            }
+        }
+                }
     
     @EventHandler
     public void STonClick(InventoryClickEvent e) {
