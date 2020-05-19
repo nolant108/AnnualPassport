@@ -541,6 +541,11 @@ public final class Main extends JavaPlugin {
             attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
             attractions.setItemMeta(attractionsmeta);
             
+            ItemStack back = new ItemStack(Material.PAPER);
+            ItemMeta backMeta = back.getItemMeta();
+            backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
+            back.setItemMeta(backMeta);
+            
             attractionsDLR.setItem(0, BSG);
             attractionsDLR.setItem(1, BSG);
             attractionsDLR.setItem(2, BSG);
@@ -549,7 +554,25 @@ public final class Main extends JavaPlugin {
             attractionsDLR.setItem(5, BSG);
             attractionsDLR.setItem(6, BSG);
             attractionsDLR.setItem(7, BSG);
-            attractionsDLR.setItem(8, BSG);
+            attractionsDLR.setItem(8, back);
+            
+            attractionsDLR.setItem(9, BSG);
+            attractionsDLR.setItem(18, BSG);
+            attractionsDLR.setItem(27, BSG);
+            attractionsDLR.setItem(36, BSG);
+            attractionsDLR.setItem(45, BSG);
+            attractionsDLR.setItem(46, BSG);
+            attractionsDLR.setItem(47, BSG);
+            attractionsDLR.setItem(48, BSG);
+            attractionsDLR.setItem(49, BSG);
+            attractionsDLR.setItem(50, BSG);
+            attractionsDLR.setItem(51, BSG);
+            attractionsDLR.setItem(52, BSG);
+            attractionsDLR.setItem(53, BSG);
+            attractionsDLR.setItem(44, BSG);
+            attractionsDLR.setItem(35, BSG);
+            attractionsDLR.setItem(26, BSG);
+            attractionsDLR.setItem(17, BSG);
 
             
             player.openInventory(attractionsDLR);
@@ -575,6 +598,11 @@ public final class Main extends JavaPlugin {
             attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
             attractions.setItemMeta(attractionsmeta);
             
+            ItemStack back = new ItemStack(Material.PAPER);
+            ItemMeta backMeta = back.getItemMeta();
+            backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
+            back.setItemMeta(backMeta);
+            
             attractionsTDR.setItem(0, BSG);
             attractionsTDR.setItem(1, BSG);
             attractionsTDR.setItem(2, BSG);
@@ -583,7 +611,25 @@ public final class Main extends JavaPlugin {
             attractionsTDR.setItem(5, BSG);
             attractionsTDR.setItem(6, BSG);
             attractionsTDR.setItem(7, BSG);
-            attractionsTDR.setItem(8, BSG);
+            attractionsTDR.setItem(8, back);
+            
+            attractionsTDR.setItem(9, BSG);
+            attractionsTDR.setItem(18, BSG);
+            attractionsTDR.setItem(27, BSG);
+            attractionsTDR.setItem(36, BSG);
+            attractionsTDR.setItem(45, BSG);
+            attractionsTDR.setItem(46, BSG);
+            attractionsTDR.setItem(47, BSG);
+            attractionsTDR.setItem(48, BSG);
+            attractionsTDR.setItem(49, BSG);
+            attractionsTDR.setItem(50, BSG);
+            attractionsTDR.setItem(51, BSG);
+            attractionsTDR.setItem(52, BSG);
+            attractionsTDR.setItem(53, BSG);
+            attractionsTDR.setItem(44, BSG);
+            attractionsTDR.setItem(35, BSG);
+            attractionsTDR.setItem(26, BSG);
+            attractionsTDR.setItem(17, BSG);
             
             player.openInventory(attractionsTDR);
 
@@ -608,6 +654,11 @@ public final class Main extends JavaPlugin {
             attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
             attractions.setItemMeta(attractionsmeta);
             
+            ItemStack back = new ItemStack(Material.PAPER);
+            ItemMeta backMeta = back.getItemMeta();
+            backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
+            back.setItemMeta(backMeta);
+            
             attractionsSWSA.setItem(0, BSG);
             attractionsSWSA.setItem(1, BSG);
             attractionsSWSA.setItem(2, BSG);
@@ -616,20 +667,39 @@ public final class Main extends JavaPlugin {
             attractionsSWSA.setItem(5, BSG);
             attractionsSWSA.setItem(6, BSG);
             attractionsSWSA.setItem(7, BSG);
-            attractionsSWSA.setItem(8, BSG);
+            attractionsSWSA.setItem(8, back);
+            
+            attractionsSWSA.setItem(9, BSG);
+            attractionsSWSA.setItem(18, BSG);
+            attractionsSWSA.setItem(27, BSG);
+            attractionsSWSA.setItem(36, BSG);
+            attractionsSWSA.setItem(45, BSG);
+            attractionsSWSA.setItem(46, BSG);
+            attractionsSWSA.setItem(47, BSG);
+            attractionsSWSA.setItem(48, BSG);
+            attractionsSWSA.setItem(49, BSG);
+            attractionsSWSA.setItem(50, BSG);
+            attractionsSWSA.setItem(51, BSG);
+            attractionsSWSA.setItem(52, BSG);
+            attractionsSWSA.setItem(53, BSG);
+            attractionsSWSA.setItem(44, BSG);
+            attractionsSWSA.setItem(35, BSG);
+            attractionsSWSA.setItem(26, BSG);
+            attractionsSWSA.setItem(17, BSG);
             
             player.openInventory(attractionsSWSA);
 
-}
+        }
         
         //                     |
         //WORLD DETECTION HERE V
         
         @EventHandler
         public void  worldDetectionAttraction(Player player) {
-        	        	
+        	        	        	
             if (player.getWorld().getName().equals("world")) {// suposed to be HUB
-            	Main.applyattractionsDLRUI((Player) player);
+            	//Main.applyattractionsDLRUI((Player) player);
+            	Main.applyattractionsSWSAUI((Player) player);
             } else if (player.getWorld().getName().equals("world_nether")) {// supposed to be dlr
             	Main.applyattractionsTDRUI((Player) player);
             } else if (player.getWorld().getName().equals("world_the_end")) {// supposed to be tdr

@@ -267,6 +267,31 @@ public class OpenBand implements Listener {
         }
 
     }
+    
+    @EventHandler
+    public void AttractionsSWSAClick(InventoryClickEvent e) {
+
+
+
+        Player player = (Player) e.getWhoClicked();
+
+
+        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: SWSA")) {
+
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+                case PAPER:
+                    Main.applyMagicBandUI((Player) player);
+                	
+                    break;
+                default:
+                    return;
+                }
+            }
+        }
+    }
+                
 
 
 
