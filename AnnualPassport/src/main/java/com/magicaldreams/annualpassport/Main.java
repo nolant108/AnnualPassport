@@ -467,6 +467,26 @@ public final class Main extends JavaPlugin {
             backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
             back.setItemMeta(backMeta);
             
+            ItemStack rp = new ItemStack(Material.CHEST);
+            ItemMeta rpMeta = rp.getItemMeta();
+            rpMeta.setDisplayName(ChatColor.GOLD + "Resource Pack");
+            rp.setItemMeta(rpMeta);
+            
+            ItemStack vis = new ItemStack(Material.SCUTE);
+            ItemMeta visMeta = vis.getItemMeta();
+            visMeta.setDisplayName(ChatColor.GOLD + "Player Visablilty");
+            vis.setItemMeta(visMeta);
+            
+            ItemStack msg = new ItemStack(Material.ACACIA_SIGN);
+            ItemMeta msgMeta = msg.getItemMeta();
+            msgMeta.setDisplayName(ChatColor.GOLD + "Toggle Messages/ScoreBoard");
+            msg.setItemMeta(msgMeta);
+            
+            ItemStack time = new ItemStack(Material.SUNFLOWER);
+            ItemMeta timeMeta = time.getItemMeta();
+            timeMeta.setDisplayName(ChatColor.GOLD + "Change Time");
+            time.setItemMeta(timeMeta);
+            
             PlayerGUI.setItem(0, BSG);
             PlayerGUI.setItem(1, BSG);
             PlayerGUI.setItem(2, BSG);
@@ -478,11 +498,11 @@ public final class Main extends JavaPlugin {
             PlayerGUI.setItem(8, BSG);
             PlayerGUI.setItem(9, GSG);
             PlayerGUI.setItem(10, GSG);
-            //
-            //
+            PlayerGUI.setItem(11, time);
+            PlayerGUI.setItem(12, msg);
             PlayerGUI.setItem(13, report);
-            //
-            //
+            PlayerGUI.setItem(14, rp);
+            PlayerGUI.setItem(15, vis);
             PlayerGUI.setItem(16, GSG);
             PlayerGUI.setItem(17, back);
             PlayerGUI.setItem(18, BSG);

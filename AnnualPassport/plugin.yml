@@ -1,5 +1,5 @@
 name: AnnualPassport
-version: 0.14.5
+version: 0.15.1
 main: com.magicaldreams.annualpassport.Main
 api-version: 1.13
 description: The Magicband plugin for magicaldreams
