@@ -3,7 +3,10 @@ package com.magicaldreams.annualpassport;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -518,8 +521,126 @@ public final class Main extends JavaPlugin {
             player.openInventory(PlayerGUI);
             
         }
+        
+        public static void applyattractionsDLRUI(Player player) {
+        	
+            Inventory attractionsDLR = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: DLR");
+            
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
+            
+            ItemStack attractions = new ItemStack(Material.MINECART);
+            ItemMeta attractionsmeta = attractions.getItemMeta();
+            attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
+            attractions.setItemMeta(attractionsmeta);
+            
+            attractionsDLR.setItem(0, BSG);
+            attractionsDLR.setItem(1, BSG);
+            attractionsDLR.setItem(2, BSG);
+            attractionsDLR.setItem(3, BSG);
+            attractionsDLR.setItem(4, attractions);
+            attractionsDLR.setItem(5, BSG);
+            attractionsDLR.setItem(6, BSG);
+            attractionsDLR.setItem(7, BSG);
+            attractionsDLR.setItem(8, BSG);
 
+            
+            player.openInventory(attractionsDLR);
 
+}
+        
+        public static void applyattractionsTDRUI(Player player) {
+        	
+            Inventory attractionsTDR = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: TDR");
+            
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
+            
+            ItemStack attractions = new ItemStack(Material.MINECART);
+            ItemMeta attractionsmeta = attractions.getItemMeta();
+            attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
+            attractions.setItemMeta(attractionsmeta);
+            
+            attractionsTDR.setItem(0, BSG);
+            attractionsTDR.setItem(1, BSG);
+            attractionsTDR.setItem(2, BSG);
+            attractionsTDR.setItem(3, BSG);
+            attractionsTDR.setItem(4, attractions);
+            attractionsTDR.setItem(5, BSG);
+            attractionsTDR.setItem(6, BSG);
+            attractionsTDR.setItem(7, BSG);
+            attractionsTDR.setItem(8, BSG);
+            
+            player.openInventory(attractionsTDR);
+
+}
+
+        public static void applyattractionsSWSAUI(Player player) {
+        	
+            Inventory attractionsSWSA = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: SWSA");
+            
+            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
+            ItemMeta BSGMeta = BSG.getItemMeta();
+            BSGMeta.setDisplayName(" ");
+            BSG.setItemMeta(BSGMeta);
+            
+            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
+            ItemMeta GSGMeta = GSG.getItemMeta();
+            GSGMeta.setDisplayName(" ");
+            GSG.setItemMeta(GSGMeta);
+            
+            ItemStack attractions = new ItemStack(Material.MINECART);
+            ItemMeta attractionsmeta = attractions.getItemMeta();
+            attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
+            attractions.setItemMeta(attractionsmeta);
+            
+            attractionsSWSA.setItem(0, BSG);
+            attractionsSWSA.setItem(1, BSG);
+            attractionsSWSA.setItem(2, BSG);
+            attractionsSWSA.setItem(3, BSG);
+            attractionsSWSA.setItem(4, attractions);
+            attractionsSWSA.setItem(5, BSG);
+            attractionsSWSA.setItem(6, BSG);
+            attractionsSWSA.setItem(7, BSG);
+            attractionsSWSA.setItem(8, BSG);
+            
+            player.openInventory(attractionsSWSA);
+
+}
+        
+        //                     |
+        //WORLD DETECTION HERE V
+        
+        @EventHandler
+        public void  worldDetectionAttraction(Player player) {
+        	        	
+            if (player.getWorld().getName().equals("world")) {// suposed to be HUB
+            	Main.applyattractionsDLRUI((Player) player);
+            } else if (player.getWorld().getName().equals("world_nether")) {// supposed to be dlr
+            	Main.applyattractionsTDRUI((Player) player);
+            } else if (player.getWorld().getName().equals("world_the_end")) {// supposed to be tdr
+            	Main.applyattractionsSWSAUI((Player) player);
+            } else if (player.getServer().getName().equals("ekr")) {
+            } else if (player.getServer().getName().equals("creative")) {
+            } else if (player.getServer().getName().equals("swsa")) {
+            } else if (player.getServer().getName().equals("dev")) {
+            }
+
+        }
         @Override
         public void onDisable() {
 

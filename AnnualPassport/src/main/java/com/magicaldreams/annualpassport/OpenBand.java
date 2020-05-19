@@ -111,6 +111,8 @@ public class OpenBand implements Listener {
 
                         break;
                     case MINECART:
+                   	 main.worldDetectionAttraction((Player) player);
+                    				
                     	
                     	break;
                     case FIREWORK_ROCKET:
