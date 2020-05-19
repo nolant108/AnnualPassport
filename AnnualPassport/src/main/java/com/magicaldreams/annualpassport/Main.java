@@ -64,6 +64,7 @@ public final class Main extends JavaPlugin {
             
             List<String> playerLore = new ArrayList<>();
             playerLore.add(ChatColor.RED + "Audio, Time, Report");
+            playerLore.add(ChatColor.GRAY + "Player Vis., Resource Pack, Scoreboard Toggle");
 
 
             ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
@@ -450,6 +451,11 @@ public final class Main extends JavaPlugin {
             audioSMeta.setDisplayName(ChatColor.GOLD + "Connect To Audio Server");
             audioS.setItemMeta(audioSMeta);
             
+            ItemStack report = new ItemStack(Material.BOOK);
+            ItemMeta reportMeta = report.getItemMeta();
+            reportMeta.setDisplayName(ChatColor.GOLD + "Report / Issue");
+            report.setItemMeta(reportMeta);
+            
             ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
             SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
             skullMeta.setOwner(player.getName());
@@ -474,7 +480,7 @@ public final class Main extends JavaPlugin {
             PlayerGUI.setItem(10, GSG);
             //
             //
-            //
+            PlayerGUI.setItem(13, report);
             //
             //
             PlayerGUI.setItem(16, GSG);

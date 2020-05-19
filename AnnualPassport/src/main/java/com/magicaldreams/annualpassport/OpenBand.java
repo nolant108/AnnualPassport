@@ -148,6 +148,16 @@ public class OpenBand implements Listener {
                     break;
                 case JUKEBOX:
                     player.performCommand("audio");
+                    
+                    break;
+                case BOOK:
+                    player.sendMessage(ChatColor.YELLOW
+                            + "Click this link to Report/Issue: https://docs.google.com/forms/d/e/1FAIpQLSf-7fXP9KbaQ6FcpzPaqBA7eeqtBIr1mc0cfxFtQmHMBNp_dg/viewform");
+                    Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "-------------------- " + player.getName() + " has to report something --------------------");
+                    player.sendMessage(ChatColor.RED + "The staff has been notified of your issue!(Shows up in console log)");
+                    player.closeInventory();
+
+                 
                 break;
             default:
                 return;
