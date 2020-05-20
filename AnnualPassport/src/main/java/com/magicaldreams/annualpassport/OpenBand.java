@@ -149,8 +149,7 @@ public class OpenBand implements Listener {
                     
                     break;
                 case JUKEBOX:
-                    player.performCommand("audio");
-                    player.closeInventory();
+
                     
                     break;
                 case BOOK:
@@ -277,6 +276,54 @@ public class OpenBand implements Listener {
 
 
         if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: SWSA")) {
+
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+                case PAPER:
+                    Main.applyMagicBandUI((Player) player);
+                	
+                    break;
+                default:
+                    return;
+                }
+            }
+        }
+    }
+    
+    @EventHandler
+    public void AttractionsTDRClick(InventoryClickEvent e) {
+
+
+
+        Player player = (Player) e.getWhoClicked();
+
+
+        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: TDR")) {
+
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+                case PAPER:
+                    Main.applyMagicBandUI((Player) player);
+                	
+                    break;
+                default:
+                    return;
+                }
+            }
+        }
+    }
+    
+    @EventHandler
+    public void AttractionsDLRClick(InventoryClickEvent e) {
+
+
+
+        Player player = (Player) e.getWhoClicked();
+
+
+        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: DLR")) {
 
             if(e.getCurrentItem() != null) {
                 e.setCancelled(true);

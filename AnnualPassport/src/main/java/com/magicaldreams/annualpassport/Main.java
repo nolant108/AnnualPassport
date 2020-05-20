@@ -234,9 +234,9 @@ public final class Main extends JavaPlugin {
             ParksGUI.setItem( 18,BSG);
             ParksGUI.setItem( 19,BSG);
             ParksGUI.setItem( 20,BSG);
-            ParksGUI.setItem( 21,BSG);
-            ParksGUI.setItem( 22,Mickey);
-            ParksGUI.setItem( 23,BSG);
+            ParksGUI.setItem( 21,Mickey);
+            ParksGUI.setItem( 22,BSG);
+            ParksGUI.setItem( 23,fish);
             ParksGUI.setItem( 24,BSG);
             ParksGUI.setItem( 25,BSG);
             ParksGUI.setItem( 26,BSG);
@@ -451,7 +451,7 @@ public final class Main extends JavaPlugin {
             
             ItemStack audioS = new ItemStack(Material.JUKEBOX);
             ItemMeta audioSMeta = audioS.getItemMeta();
-            audioSMeta.setDisplayName(ChatColor.GOLD + "Connect To Audio Server");
+            audioSMeta.setDisplayName(ChatColor.GOLD + "Connect To Audio Server: /audio");
             audioS.setItemMeta(audioSMeta);
             
             ItemStack report = new ItemStack(Material.BOOK);
@@ -698,8 +698,8 @@ public final class Main extends JavaPlugin {
         public void  worldDetectionAttraction(Player player) {
         	        	        	
             if (player.getWorld().getName().equals("world")) {// suposed to be HUB
-            	//Main.applyattractionsDLRUI((Player) player);
-            	Main.applyattractionsSWSAUI((Player) player);
+            	Main.applyattractionsDLRUI((Player) player);
+            //  	Main.applyattractionsSWSAUI((Player) player);
             } else if (player.getWorld().getName().equals("world_nether")) {// supposed to be dlr
             	Main.applyattractionsTDRUI((Player) player);
             } else if (player.getWorld().getName().equals("world_the_end")) {// supposed to be tdr
