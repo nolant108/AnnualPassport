@@ -435,7 +435,7 @@ public final class Main extends JavaPlugin {
         }
         
         
-        public void applyPlayerUI(Player player) {
+        public static void applyPlayerUI(Player player) {
         	
             Inventory PlayerGUI = Bukkit.createInventory(null, 27, ChatColor.BLUE + "Player Settings");
 
@@ -524,7 +524,7 @@ public final class Main extends JavaPlugin {
         
         public static void applyattractionsDLRUI(Player player) {
         	
-            Inventory attractionsDLR = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: DLR");
+            Inventory attractionsDLR = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: NULL");
             
             ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
             ItemMeta BSGMeta = BSG.getItemMeta();
@@ -579,138 +579,57 @@ public final class Main extends JavaPlugin {
 
 }
         
-        public static void applyattractionsTDRUI(Player player) {
+       
+        
+        public static void applytimeUI(Player player) {
         	
-            Inventory attractionsTDR = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: TDR");
+        	Inventory time = Bukkit.createInventory(null, 9, ChatColor.BLUE + "Time");
             
             ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
             ItemMeta BSGMeta = BSG.getItemMeta();
             BSGMeta.setDisplayName(" ");
             BSG.setItemMeta(BSGMeta);
             
-            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
-            ItemMeta GSGMeta = GSG.getItemMeta();
-            GSGMeta.setDisplayName(" ");
-            GSG.setItemMeta(GSGMeta);
+            ItemStack morning = new ItemStack((Material.YELLOW_DYE));
+            ItemMeta morningMeta = morning.getItemMeta();
+            morningMeta.setDisplayName(ChatColor.YELLOW + "Morning");
+            morning.setItemMeta(morningMeta);
             
-            ItemStack attractions = new ItemStack(Material.MINECART);
-            ItemMeta attractionsmeta = attractions.getItemMeta();
-            attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
-            attractions.setItemMeta(attractionsmeta);
+            ItemStack afternoon = new ItemStack((Material.ORANGE_DYE));
+            ItemMeta afternoonMeta = morning.getItemMeta();
+            afternoonMeta.setDisplayName(ChatColor.GOLD + "Afternoon");
+            afternoon.setItemMeta(afternoonMeta);
+            
+            ItemStack evening = new ItemStack((Material.LAPIS_LAZULI));
+            ItemMeta eveningMeta = morning.getItemMeta();
+            eveningMeta.setDisplayName(ChatColor.DARK_AQUA + "Evening");
+            evening.setItemMeta(eveningMeta);
+            
             
             ItemStack back = new ItemStack(Material.PAPER);
             ItemMeta backMeta = back.getItemMeta();
             backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
             back.setItemMeta(backMeta);
             
-            attractionsTDR.setItem(0, BSG);
-            attractionsTDR.setItem(1, BSG);
-            attractionsTDR.setItem(2, BSG);
-            attractionsTDR.setItem(3, BSG);
-            attractionsTDR.setItem(4, attractions);
-            attractionsTDR.setItem(5, BSG);
-            attractionsTDR.setItem(6, BSG);
-            attractionsTDR.setItem(7, BSG);
-            attractionsTDR.setItem(8, back);
-            
-            attractionsTDR.setItem(9, BSG);
-            attractionsTDR.setItem(18, BSG);
-            attractionsTDR.setItem(27, BSG);
-            attractionsTDR.setItem(36, BSG);
-            attractionsTDR.setItem(45, BSG);
-            attractionsTDR.setItem(46, BSG);
-            attractionsTDR.setItem(47, BSG);
-            attractionsTDR.setItem(48, BSG);
-            attractionsTDR.setItem(49, BSG);
-            attractionsTDR.setItem(50, BSG);
-            attractionsTDR.setItem(51, BSG);
-            attractionsTDR.setItem(52, BSG);
-            attractionsTDR.setItem(53, BSG);
-            attractionsTDR.setItem(44, BSG);
-            attractionsTDR.setItem(35, BSG);
-            attractionsTDR.setItem(26, BSG);
-            attractionsTDR.setItem(17, BSG);
-            
-            player.openInventory(attractionsTDR);
-
-}
-
-        public static void applyattractionsSWSAUI(Player player) {
+            time.setItem(0, BSG);
+            time.setItem(1, morning);
+            time.setItem(2, BSG);
+            time.setItem(3, BSG);
+            time.setItem(4, afternoon);
+            time.setItem(5, BSG);
+            time.setItem(6, BSG);
+            time.setItem(7, evening);
+            time.setItem(8, back);
         	
-            Inventory attractionsSWSA = Bukkit.createInventory(null, 54, ChatColor.BLUE + "Attractions: SWSA");
             
-            ItemStack BSG = new ItemStack((Material.BLUE_STAINED_GLASS_PANE));
-            ItemMeta BSGMeta = BSG.getItemMeta();
-            BSGMeta.setDisplayName(" ");
-            BSG.setItemMeta(BSGMeta);
-            
-            ItemStack GSG = new ItemStack((Material.GREEN_STAINED_GLASS_PANE));
-            ItemMeta GSGMeta = GSG.getItemMeta();
-            GSGMeta.setDisplayName(" ");
-            GSG.setItemMeta(GSGMeta);
-            
-            ItemStack attractions = new ItemStack(Material.MINECART);
-            ItemMeta attractionsmeta = attractions.getItemMeta();
-            attractionsmeta.setDisplayName(ChatColor.YELLOW + "Attractions");
-            attractions.setItemMeta(attractionsmeta);
-            
-            ItemStack back = new ItemStack(Material.PAPER);
-            ItemMeta backMeta = back.getItemMeta();
-            backMeta.setDisplayName(ChatColor.GREEN + "<-- Back");
-            back.setItemMeta(backMeta);
-            
-            attractionsSWSA.setItem(0, BSG);
-            attractionsSWSA.setItem(1, BSG);
-            attractionsSWSA.setItem(2, BSG);
-            attractionsSWSA.setItem(3, BSG);
-            attractionsSWSA.setItem(4, attractions);
-            attractionsSWSA.setItem(5, BSG);
-            attractionsSWSA.setItem(6, BSG);
-            attractionsSWSA.setItem(7, BSG);
-            attractionsSWSA.setItem(8, back);
-            
-            attractionsSWSA.setItem(9, BSG);
-            attractionsSWSA.setItem(18, BSG);
-            attractionsSWSA.setItem(27, BSG);
-            attractionsSWSA.setItem(36, BSG);
-            attractionsSWSA.setItem(45, BSG);
-            attractionsSWSA.setItem(46, BSG);
-            attractionsSWSA.setItem(47, BSG);
-            attractionsSWSA.setItem(48, BSG);
-            attractionsSWSA.setItem(49, BSG);
-            attractionsSWSA.setItem(50, BSG);
-            attractionsSWSA.setItem(51, BSG);
-            attractionsSWSA.setItem(52, BSG);
-            attractionsSWSA.setItem(53, BSG);
-            attractionsSWSA.setItem(44, BSG);
-            attractionsSWSA.setItem(35, BSG);
-            attractionsSWSA.setItem(26, BSG);
-            attractionsSWSA.setItem(17, BSG);
-            
-            player.openInventory(attractionsSWSA);
-
+            player.openInventory(time);
         }
+        
         
         //                     |
         //WORLD DETECTION HERE V
         
-        @EventHandler
-        public void  worldDetectionAttraction(Player player) {
-        	        	        	
-            if (player.getWorld().getName().equals("world")) {// suposed to be HUB
-            	Main.applyattractionsDLRUI((Player) player);
-            //  	Main.applyattractionsSWSAUI((Player) player);
-            } else if (player.getWorld().getName().equals("world_nether")) {// supposed to be dlr
-            	Main.applyattractionsTDRUI((Player) player);
-            } else if (player.getWorld().getName().equals("world_the_end")) {// supposed to be tdr
-            	Main.applyattractionsSWSAUI((Player) player);
-            } else if (player.getServer().getName().equals("ekr")) {
-            } else if (player.getServer().getName().equals("creative")) {
-            } else if (player.getServer().getName().equals("swsa")) {
-            } else if (player.getServer().getName().equals("dev")) {
-            }
-
-        }
+        
         @Override
         public void onDisable() {
 

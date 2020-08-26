@@ -111,7 +111,6 @@ public class OpenBand implements Listener {
 
                         break;
                     case MINECART:
-                   	 main.worldDetectionAttraction((Player) player);
                     				
                     	
                     	break;
@@ -162,6 +161,7 @@ public class OpenBand implements Listener {
                     break;
                 case CHEST:
                 	
+                	player.setResourcePack("https://github.com/chums122/Resource-Pack/raw/master/Archives/Development/md314alpha.zip");
                 	
                     break;
                 case SCUTE:
@@ -171,7 +171,7 @@ public class OpenBand implements Listener {
                 	
                     break;
                 case SUNFLOWER:
-                	
+                	Main.applytimeUI((Player) player);
                  
                 break;
             default:
@@ -180,6 +180,36 @@ public class OpenBand implements Listener {
             }
         }
                 }
+    
+    @EventHandler
+    public void timeclick(InventoryClickEvent e) {
+    	
+    	Player player = (Player) e.getWhoClicked();
+    	
+    	if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Time")) {
+            if(e.getCurrentItem() != null) {
+                e.setCancelled(true);
+                switch (e.getCurrentItem().getType()) {
+    		case YELLOW_DYE:
+    			player.setPlayerTime(1000, false);
+            break;
+    		case ORANGE_DYE:
+    			player.setPlayerTime(7000, false);
+            break;
+    		case LAPIS_LAZULI:
+    			player.setPlayerTime(14000, false);
+            break;
+    		case PAPER:
+    			Main.applyPlayerUI((Player) player);
+            break;
+        default:
+            return;
+    	}
+            }
+    	}
+    }
+    
+    	
     
     @EventHandler
     public void STonClick(InventoryClickEvent e) {
@@ -266,54 +296,7 @@ public class OpenBand implements Listener {
         }
 
     }
-    
-    @EventHandler
-    public void AttractionsSWSAClick(InventoryClickEvent e) {
-
-
-
-        Player player = (Player) e.getWhoClicked();
-
-
-        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: SWSA")) {
-
-            if(e.getCurrentItem() != null) {
-                e.setCancelled(true);
-                switch (e.getCurrentItem().getType()) {
-                case PAPER:
-                    Main.applyMagicBandUI((Player) player);
-                	
-                    break;
-                default:
-                    return;
-                }
-            }
-        }
-    }
-    
-    @EventHandler
-    public void AttractionsTDRClick(InventoryClickEvent e) {
-
-
-
-        Player player = (Player) e.getWhoClicked();
-
-
-        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: TDR")) {
-
-            if(e.getCurrentItem() != null) {
-                e.setCancelled(true);
-                switch (e.getCurrentItem().getType()) {
-                case PAPER:
-                    Main.applyMagicBandUI((Player) player);
-                	
-                    break;
-                default:
-                    return;
-                }
-            }
-        }
-    }
+      
     
     @EventHandler
     public void AttractionsDLRClick(InventoryClickEvent e) {
@@ -323,7 +306,7 @@ public class OpenBand implements Listener {
         Player player = (Player) e.getWhoClicked();
 
 
-        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: DLR")) {
+        if( e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Attractions: NULL")) {
 
             if(e.getCurrentItem() != null) {
                 e.setCancelled(true);
